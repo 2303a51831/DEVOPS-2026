@@ -1,0 +1,34 @@
+[
+  {
+    "id": "c001",
+    "title": "React Essentials",
+    "level": "Beginner",
+    "duration": "4 weeks",
+    "instructor": "Jane Doe",
+    "description": "Learn the fundamentals of React: components, props, state, hooks, and JSX. Build your first interactive app."
+  },
+  {
+    "id": "c002",
+    "title": "Advanced React Patterns",
+    "level": "Intermediate",
+    "duration": "6 weeks",
+    "instructor": "John Smith",
+    "description": "Master advanced React concepts: custom hooks, context API, performance optimization, and design patterns."
+  },
+  {
+    "id": "c003",
+    "title": "Full-Stack Web Development",
+    "level": "Intermediate",
+    "duration": "8 weeks",
+    "instructor": "Aisha Khan",
+    "description": "Build complete web applications with React frontend, Node.js backend, and databases. Deploy to production."
+  },
+  {
+    "id": "c004",
+    "title": "JavaScript Mastery",
+    "level": "Beginner",
+    "duration": "5 weeks",
+    "instructor": "Mike Johnson",
+    "description": "Deep dive into JavaScript: ES6+, async/await, promises, closures, and modern JavaScript practices."
+  }
+]

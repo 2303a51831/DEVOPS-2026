@@ -1,0 +1,8 @@
+{
+  "appName": "Acme Learning Dashboard",
+  "theme": "light",
+  "itemsPerPage": 6,
+  "showWelcome": true,
+  "dateFormat": "YYYY-MM-DD",
+  "version": "1.0.0"
+}

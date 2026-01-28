@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps Assignment 1: REST API Design</title>
+</head>
+<body>
+
+    <h1>Prototype REST API Design: To-Do List</h1>
+    <p><strong>Student Name:</strong> [Your Name]</p>
+    <p><strong>Course:</strong> DevOps - Lesson 1</p>
+
+    <hr>
+
+    <h2>1 & 2. API Endpoints and HTTP Methods</h2>
+    <p>The following table describes the CRUD operations for the Task resource:</p>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Operation</th>
+                <th>HTTP Method</th>
+                <th>Endpoint</th>
+                <th>Reasoning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Create Task</td>
+                <td>POST</td>
+                <td>/tasks</td>
+                <td>Used to submit new data to the server. Non-idempotent.</td>
+            </tr>
+            <tr>
+                <td>Read All Tasks</td>
+                <td>GET</td>
+                <td>/tasks</td>
+                <td>Used to retrieve a list of all resources. Safe method.</td>
+            </tr>
+            <tr>
+                <td>Read Specific Task</td>
+                <td>GET</td>
+                <td>/tasks/:id</td>
+                <td>Used to fetch a single resource using its unique identifier.</td>
+            </tr>
+            <tr>
+                <td>Update Task</td>
+                <td>PUT</td>
+                <td>/tasks/:id</td>
+                <td>Used to replace an existing resource with new data. Idempotent.</td>
+            </tr>
+            <tr>
+                <td>Delete Task</td>
+                <td>DELETE</td>
+                <td>/tasks/:id</td>
+                <td>Used to remove a specific resource from the collection.</td>
+            </tr>
+        </tbody>
+    </table>
+
+     
+
+    <hr>
+
+    <h2>3. Unique Identification</h2>
+    <p>
+        In the absence of a database, the server will use a <strong>Global Counter Variable</strong>. 
+        Each time a POST request is made, the server assigns the current counter value to the new task 
+        and then increments the counter (e.g., ID 1, 2, 3...). This ensures no two tasks share the same ID during the application's runtime.
+    </p>
+
+    <hr>
+
+    <h2>4. Data Volatility</h2>
+    <p>
+        Since data is stored in-memory (RAM), <strong>all data will be lost</strong> when the server restarts. 
+        This is because RAM is <em>volatile</em>. In a production DevOps environment, we would solve this 
+        by connecting the API to a persistent database or a mounted volume.
+    </p>
+
+    <hr>
+
+    <h2>5. HTTP Status Codes</h2>
+    <ul>
+        <li><strong>201 Created:</strong> Returned after a successful POST request.</li>
+        <li><strong>200 OK:</strong> Returned for successful GET, PUT, or DELETE requests.</li>
+        <li><strong>400 Bad Request:</strong> Returned if the client sends invalid task data.</li>
+        <li><strong>404 Not Found:</strong> Returned if the client tries to access an ID that does not exist.</li>
+        <li><strong>500 Internal Server Error:</strong> Returned if the server encounters an unexpected crash.</li>
+    </ul>
+
+</body>
+</html>

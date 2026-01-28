@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Registration</title>
+</head>
+<body>
+
+  <header>
+    <h1>Employee Registration</h1>
+    <p>Please fill out the form below to register as an employee.</p>
+  </header>
+
+  <main>
+    <!-- Semantic grouping of the registration form -->
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Registration form</h2>
+
+      <!-- Core form element -->
+      <form action="/register" method="post" autocomplete="on">
+
+        <!-- Employee identity -->
+        <fieldset>
+          <legend>Employee information</legend>
+
+          <p>
+            <label for="emp-id">Employee ID:</label>
+            <input type="text" id="emp-id" name="emp_id" placeholder="e.g., EMP12345">
+          </p>
+
+          <p>
+            <label for="first-name">First name:</label>
+            <input type="text" id="first-name" name="first_name" required>
+          </p>
+
+          <p>
+            <label for="last-name">Last name:</label>
+            <input type="text" id="last-name" name="last_name" required>
+          </p>
+
+          <p>
+            <label for="dob">Date of birth:</label>
+            <input type="date" id="dob" name="dob" required>
+          </p>
+
+          <p>
+            <span>Gender:</span><br>
+            <input type="radio" id="gender-male" name="gender" value="male" required>
+            <label for="gender-male">Male</label>
+            <input type="radio" id="gender-female" name="gender" value="female">
+            <label for="gender-female">Female</label>
+            <input type="radio" id="gender-other" name="gender" value="other">
+            <label for="gender-other">Other</label>
+            <input type="radio" id="gender-na" name="gender" value="prefer_not_to_say">
+            <label for="gender-na">Prefer not to say</label>
+          </p>
+
+        
+            </datalist>
+          </p>
+        </fieldset>
+
+        <!-- Contact details -->
+        <fieldset>
+          <legend>Contact details</legend>
+
+          <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </p>
+
+          <p>
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91XXXXXXXXXX" required>
+          </p>
+
+          <p>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="40" required></textarea>
+          </p>
+
+          <p>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+          </p>
+
+          <p>
+            <label for="state">State/Province:</label>
+            <input type="text" id="state" name="state">
+          </p>
+
+          <p>
+            <label for="postal-code">Postal code:</label>
+            <input type="text" id="postal-code" name="postal_code">
+          </p>
+        </fieldset>
+
+        <!-- Employment details -->
+        <fieldset>
+          <legend>Employment details</legend>
+
+          <p>
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+              <option value="" selected disabled>Select a department</option>
+              <option value="hr">Human Resources</option>
+              <option value="it">Information Technology</option>
+              <option value="finance">Finance</option>
+              <option value="marketing">Marketing</option>
+              <option value="sales">Sales</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="designation">Designation:</label>
+            <input type="text" id="designation" name="designation" placeholder="e.g., Software Engineer" required>
+          </p>
+
+          <p>
+            <label for="join-date">Joining date:</label>
+            <input type="date" id="join-date" name="join_date">
+          </p>
+
+          <p>
+            <label for="employment-type">Employment type:</label>
+            <select id="employment-type" name="employment_type">
+              <option value="full_time">Full-time</option>
+              <option value="part_time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="internship">Internship</option>
+            </select>
+          </p>
+        </fieldset>
+
+        <!-- Additional info -->
+        <fieldset>
+          <legend>Additional information</legend>
+
+          <p>
+            <label for="emergency-contact-name">Emergency contact name:</label>
+            <input type="text" id="emergency-contact-name" name="emergency_contact_name">
+          </p>
+
+          <p>
+            <label for="emergency-contact-phone">Emergency contact phone:</label>
+            <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone">
+          </p>
+
+          <p>
+            <label for="documents">Upload documents (ID, resume, certificates):</label>
+            <input type="file" id="documents" name="documents" multiple>
+          </p>
+          
+          <p>
+            <span>Preferred contact method:</span><br>
+            <input type="checkbox" id="contact-email" name="contact_method" value="email">
+            <label for="contact-email">Email</label>
+            <input type="checkbox" id="contact-phone" name="contact_method" value="phone">
+            <label for="contact-phone">Phone</label>
+            <input type="checkbox" id="contact-post" name="contact_method" value="post">
+            <label for="contact-post">Post</label>
+          </p>
+
+          <p>
+            <label for="notes">Notes or special requirements:</label><br>
+            <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Accessibility needs, etc."></textarea>
+          </p>
+
+          <p>
+            <label for="agree">
+              <input type="checkbox" id="agree" name="agree" required>
+              I confirm the information provided is accurate.
+            </label>
+          </p>
+        </fieldset>
+
+        <!-- Hidden and readonly examples -->
+        <p>
+          <label for="ref-code">Referral code (optional):</label>
+          <input type="text" id="ref-code" name="ref_code" readonly value="AUTO-GEN">
+        </p>
+        <input type="hidden" name="form_version" value="1.0">
+
+        <!-- Form controls -->
+        <p>
+          <button type="submit">Submit registration</button>
+          <button type="reset">Reset form</button>
+        </p>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Employee HR Office</p>
+  </footer>
+
+</body>
+</html>
